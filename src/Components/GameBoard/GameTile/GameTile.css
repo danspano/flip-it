@@ -1,0 +1,67 @@
+.GameTile {
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.container {
+    perspective: 800px;
+    position: relative;
+    box-sizing: border-box;
+    transform: scale(1);
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.container.matched {
+    transform: scale(0);
+    transition-duration: 500ms;
+    transition-property: transform;
+}
+
+.flipper {
+    transform-style: preserve-3d;
+    transition: transform 500ms;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.flipper.flipped {
+    transform: rotateX(180deg);
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 14px;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateX(0deg);
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1em;
+    transition: all 500ms ease-out;
+}
+
+.front:hover {
+   background-color: #CCC;
+}
+
+.back {
+    transform: rotateX(180deg);
+}
