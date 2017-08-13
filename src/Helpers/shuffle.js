@@ -1,5 +1,5 @@
 const shuffle = function (array) {
-  let iterator = 0,
+  let i = 0,
     j = 0,
     temp;
 
